@@ -1,7 +1,6 @@
 package com.seagle.utils.algorithms.sorting;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -13,31 +12,33 @@ import java.util.List;
 public class SortingAlgorithmsMain {
 
     private enum SortAlgorithmsType {
-        Type_Bubble, Type_Quick, Type_Selection
+        Bubble, Quick, Selection, Insertion,
     }
 
-    private static Integer[] data = new Integer[]{2, 10, 8, 4, 3, 10, 15, 7, 4, 9, 8, 11, 41, 22, 50, 10, 6};
+    private static final Integer[] DATA = new Integer[]{2, 10, 8, 4, 3, 10, 15, 7, 4, 9, 8, 11, 41, 22, 50, 10, 6};
 
     public static void main(String[] args) {
-        List<Integer> dataList = Arrays.asList(data);
+        List<Integer> dataList = Arrays.asList(DATA);
         long startTime = System.currentTimeMillis();
+        SortAlgorithmsType sortType = SortAlgorithmsType.Insertion;
+        Sorting sort = createSortAlgorithm(sortType);
         System.out.println("Befor sort....................");
         printArray(dataList);
-        SortAlgorithmsType sortType = SortAlgorithmsType.Type_Selection;
-        Sorting sort = createSortAlgorithm(sortType);
         sort.sort(dataList);
-        System.out.println("After " + sortType.name() + " sort...................." + (System.currentTimeMillis() - startTime));
+        System.out.println("After sort...................." + (System.currentTimeMillis() - startTime));
         printArray(dataList);
     }
 
     private static Sorting createSortAlgorithm(SortAlgorithmsType type) {
         switch (type) {
-            case Type_Bubble:
+            case Bubble:
                 return new BubbleSorting();
-            case Type_Quick:
+            case Quick:
                 return new QuickSorting();
-            case Type_Selection:
+            case Selection:
                 return new SelectionSorting();
+            case Insertion:
+                return new InsertionSorting();
             default:
                 return null;
         }
