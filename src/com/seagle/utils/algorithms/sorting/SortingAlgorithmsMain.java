@@ -13,7 +13,7 @@ import java.util.List;
 public class SortingAlgorithmsMain {
 
     private enum SortAlgorithmsType {
-        Type_Bubble, Type_Quick
+        Type_Bubble, Type_Quick, Type_Selection
     }
 
     private static Integer[] data = new Integer[]{2, 10, 8, 4, 3, 10, 15, 7, 4, 9, 8, 11, 41, 22, 50, 10, 6};
@@ -23,9 +23,10 @@ public class SortingAlgorithmsMain {
         long startTime = System.currentTimeMillis();
         System.out.println("Befor sort....................");
         printArray(dataList);
-        Sorting sort = createSortAlgorithm(SortAlgorithmsType.Type_Quick);
+        SortAlgorithmsType sortType = SortAlgorithmsType.Type_Selection;
+        Sorting sort = createSortAlgorithm(sortType);
         sort.sort(dataList);
-        System.out.println("After sort...................." + (System.currentTimeMillis() - startTime));
+        System.out.println("After " + sortType.name() + " sort...................." + (System.currentTimeMillis() - startTime));
         printArray(dataList);
     }
 
@@ -35,6 +36,8 @@ public class SortingAlgorithmsMain {
                 return new BubbleSorting();
             case Type_Quick:
                 return new QuickSorting();
+            case Type_Selection:
+                return new SelectionSorting();
             default:
                 return null;
         }
