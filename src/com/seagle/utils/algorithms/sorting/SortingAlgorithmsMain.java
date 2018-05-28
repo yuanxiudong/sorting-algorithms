@@ -12,15 +12,15 @@ import java.util.List;
 public class SortingAlgorithmsMain {
 
     private enum SortAlgorithmsType {
-        Bubble, Quick, Selection, Insertion,
+        Bubble, Quick, Selection, Insertion,BinaryInsertion,
     }
 
-    private static final Integer[] DATA = new Integer[]{2, 10, 8, 4, 3, 10, 15, 7, 4, 9, 8, 11, 41, 22, 50, 10, 6};
+    private static final Integer[] DATA = new Integer[]{2, 10, 8, 4, 3, 10, 15, 7, 4, 9, 8, 11, 41, 22, 50, 10, 6,0};
 
     public static void main(String[] args) {
         List<Integer> dataList = Arrays.asList(DATA);
         long startTime = System.currentTimeMillis();
-        SortAlgorithmsType sortType = SortAlgorithmsType.Insertion;
+        SortAlgorithmsType sortType = SortAlgorithmsType.Bubble;
         Sorting sort = createSortAlgorithm(sortType);
         System.out.println("Befor sort....................");
         printArray(dataList);
@@ -39,6 +39,8 @@ public class SortingAlgorithmsMain {
                 return new SelectionSorting();
             case Insertion:
                 return new InsertionSorting();
+            case BinaryInsertion:
+                return new BinaryInsertionSorting();
             default:
                 return null;
         }
