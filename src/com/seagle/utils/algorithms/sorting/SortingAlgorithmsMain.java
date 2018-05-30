@@ -20,7 +20,7 @@ public class SortingAlgorithmsMain {
     public static void main(String[] args) {
         List<Integer> dataList = Arrays.asList(DATA);
         long startTime = System.currentTimeMillis();
-        SortAlgorithmsType sortType = SortAlgorithmsType.Bubble;
+        SortAlgorithmsType sortType = SortAlgorithmsType.BinaryInsertion;
         Sorting sort = createSortAlgorithm(sortType);
         System.out.println("Befor sort....................");
         printArray(dataList);

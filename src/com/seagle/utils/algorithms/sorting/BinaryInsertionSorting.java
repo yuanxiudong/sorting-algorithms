@@ -23,6 +23,9 @@ public class BinaryInsertionSorting extends Sorting {
             T target = data.get(index);
             int startIndex = 0;
             int endIndex = index;
+            if (data.get(endIndex - 1).compareTo(target) < 0) {
+                continue;
+            }
             while (endIndex > startIndex) {
                 int binaryIndex = startIndex + (endIndex - startIndex) / 2;
                 if (data.get(binaryIndex).compareTo(target) > 0) {
