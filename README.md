@@ -1,37 +1,26 @@
 # SortingAlgorithms
 
 #### 项目介绍
-学习排序算法
+排序算法实现,文件结构：  
+
+- Sorting:排序算法父类  
+- BubbleSorting:冒泡排序算法  
+- SelectionSorting: 选择排序算法 
+- QuickSorting: 快速排序算法  
+- InsertionSorting: 直接插入排序算法 
+- BinaryInsertionSorting: 二分法插入排序算法   
+- ShellSorting: 希尔排序算法   
+- SortingAlgorithmsMain: 工程测试验证主类
 
 #### 软件架构
-软件架构说明
 
-
-#### 安装教程
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
+1. 所有排序算法需要继承Sorting父类，实现sort方法。
+2. sort方法采取了泛型参数。
+3. 所有待排数据列表中的数据对象需要实现Comparable接口（基本类型包装器对象已经实现了该接口）。
+4. main方法测试类采用工厂方法和策略模式创建各个排序算法并进行排序。
 
 #### 参与贡献
 
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+- seagle(yuanxiudong66@sina.com)
 
 
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [http://git.mydoc.io/](http://git.mydoc.io/)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
